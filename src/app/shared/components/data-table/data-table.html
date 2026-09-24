@@ -1,0 +1,23 @@
+<ul>
+    @if (!users) {
+        <p>Cargando...</p>
+    }
+    @if (users) {
+
+        <!-- Super binding-->
+        <input [(ngModel)]="buscar" type="text" placeholder="Buscar">
+        <button (click)="buscarUsuarios()">Buscar</button>
+
+        <!-- Envío de parámetro como referencia-->
+        <!-- <input #buscar type="text" placeholder="Buscar...">
+        <button (click)="buscarUsuarios(buscar)">Buscar</button> -->
+
+        <!-- Uso de evento -->
+        <!-- <input (keyup)="guardarBuscar($event)" type="text" placeholder="Buscar...">
+        <button (click)="buscarUsuarios()">Buscar</button> -->
+        @for(usuario of users; track usuario.email){
+            <li>{{usuario.name}} - {{usuario.email}}</li>
+        }
+    
+    }
+</ul>

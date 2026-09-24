@@ -1,0 +1,7 @@
+@if (course.name){
+    <h1>{{course.name}}</h1>
+} @else {
+    @if (!error){
+        <p>No hay curso seleccionado</p>
+    }
+}
