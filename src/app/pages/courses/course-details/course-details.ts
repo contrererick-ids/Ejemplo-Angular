@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, RouterLink } from '@angular/router';
 import { Course } from '../../../shared/interfaces/course'
 import { CourseService } from '../../../shared/services/course';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-course-details',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './course-details.html',
   styleUrl: './course-details.scss',
 })
@@ -35,6 +36,7 @@ export class CourseDetails implements OnInit {
   }
 
   getCourse(){
+    console.log('Voy a la API: ', environment.apiURL)
     // HTTP: traer los datos del {this.cursoId}
     const curso = this.courseService.getCurso();
     if(this.cursoId == curso.id){
