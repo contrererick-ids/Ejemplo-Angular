@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'cursos/:id', component: CourseDetails },
     { path: 'usuarios', component: Usuarios, children:[
         { path: '', component: ListaUsuarios },
-        { path: '/new', component: CrearUsuario },
+        { path: 'new', component: CrearUsuario },
         { path: ':id', component: DetalleUsuario }
     ]},
     { path: '**', component: NotFound }

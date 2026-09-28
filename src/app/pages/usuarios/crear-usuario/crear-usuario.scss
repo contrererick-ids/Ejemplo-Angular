@@ -1,0 +1,17 @@
+.newUserDiv {
+    width: 80%;
+    background-color: rgb(220, 220, 220);
+}
+
+.newUserHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(220, 220, 220);
+}
+
+.newUserHeader h2 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(30, 30, 30)
+}
