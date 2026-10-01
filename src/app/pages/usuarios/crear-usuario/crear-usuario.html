@@ -9,23 +9,38 @@
         <div>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" formControlName="name">
+            @if (form.controls['name'].errors){
+                <span class="error">{{form.controls['name'].errors['required'] ? 'Este campo es requerido' : 'El nombre debe tener una longitud mínima de 2 caracteres'}}</span>
+            }
         </div>
         <div>
             <label for="email">Email:</label>
             <input type="text" name="email" formControlName="email">
+            @if (form.controls['email'].errors){
+                <span class="error">{{form.controls['email'].errors['required'] ? 'Este campo es requerido' : 'Correo inválido'}}</span>
+            }
         </div>
         <div>
             <label for="password">Password:</label>
             <input type="password" name="password" formControlName="password">
+            @if (form.controls['password'].errors){
+                <span class="error">{{form.controls['password'].errors['required'] ? 'Este campo es requerido' : 'La contraseña debe tener al menos 8 caracteres'}}</span>
+            }
         </div>
         <div>
             <label for="confirmar">Confirmar Password:</label>
             <input type="password" name="confirmar" formControlName="confirm">
+            @if (form.controls['confirm'].errors){
+                <span class="error">{{form.controls['confirm'].errors['required'] ? 'Este campo es requerido' : 'La contraseña debe tener al menos 8 caracteres'}}</span>
+            }
         </div>
     
         <div>
             <label>
                 <input type="checkbox" name="accept" formControlName="accept">Aceptar terminos y condiciones
+                @if (form.controls['accept'].errors){
+                    <span class="error">Es necesario aceptar los términos y condiciones</span>
+                }
             </label>
         </div>
     
